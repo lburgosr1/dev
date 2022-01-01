@@ -1,0 +1,9 @@
+<div class="card">
+
+    <h3 class="card-header">Personajes</h3>
+    <div class="card-body">
+        <ul class="list-group" *ngFor="let p of personajes">
+            <li class="list-group-item list-group-item-secondary">{{p.nombre}} - {{p.poder | number}}</li>
+        </ul>
+    </div>
+</div>

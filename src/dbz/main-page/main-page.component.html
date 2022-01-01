@@ -2,28 +2,19 @@
 
 <h3>Dragon Ball Z</h3>
 <hr>
+<div class="container">
 
-<div class="row">
-    <div class="col">
-        <h3>Personajes</h3>
-        <hr>
-        <ul>
-            <li>Krillin - 700</li>
-            <li>Goku - 15,00</li>
-            <li>Vegeta - 8,500</li>
-        </ul>
-    </div>
-
-    <div class="col">
-        <h3>Agregar</h3>
-        <hr>
-    
-        <form (ngSubmit)="agregar()">
-            <input type="text" placeholder="Nombre">
-            <input type="number" placeholder="Poder">
-    
-            <button type="submit">Agregar</button>
-        </form>
+    <div class="row">
+        <div class="col">
+            <app-personajes [personajes]="personajes"></app-personajes>
+        </div>
+        
+        <div class="col">
+            <app-agregar 
+            [personaje]="personaje"
+            (onNuevoPersonaje)="agregarPersonaje($event)"
+            ></app-agregar>
+        </div>
     </div>
 </div>
 

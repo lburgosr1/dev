@@ -1,0 +1,11 @@
+<div class="card"> 
+    <h3 class="card-header">Agregar</h3>
+    <div class="card-body">
+        <form (ngSubmit)="agregar()">
+            <input type="text" class="form-control" placeholder="Nombre" name="nombre" [(ngModel)]="personaje.nombre" />
+            <input type="number" class="form-control" name="poder" placeholder="Poder" [(ngModel)]="personaje.poder" />
+            
+            <button type="submit">Agregar</button>
+        </form>
+    </div>
+</div>

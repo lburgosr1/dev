@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
-import { Country } from '../../interfaces/pais.interface';
+import { Country, Language } from '../../interfaces/pais.interface';
 import { PaisService } from '../../services/pais.service';
 
 @Component({
@@ -12,6 +12,7 @@ import { PaisService } from '../../services/pais.service';
 export class VerPaisComponent implements OnInit {
 
   pais: Country;
+  languages: Array<string> = [];
 
   constructor(
     private activateRoute: ActivatedRoute,
@@ -27,6 +28,7 @@ export class VerPaisComponent implements OnInit {
     .subscribe( pais => {
       console.log(pais);
       this.pais = pais;
+      this.getLanguages(pais[0].languages);
 
     });
 
@@ -38,6 +40,16 @@ export class VerPaisComponent implements OnInit {
       });
 
     }); */
+  }
+  getLanguages(languages: Language): void  {
+    if(!languages) {
+      return;
+    }
+
+    for(let item in languages){
+      this.languages.push(languages[item]);
+    }
+
   }
 
 }

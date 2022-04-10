@@ -19,7 +19,7 @@ export interface Country {
     numericCode:    string;
     flags:          Flags;
     currencies:     Currency[];
-    languages:      Language[];
+    languages:      Language;
     translations:   Translations;
     flag:           string;
     regionalBlocs:  RegionalBloc[];

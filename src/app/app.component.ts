@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pipeApp';
+
+  num: number = 1000;
+  nombre: string = "luiS bUrGos";
+
+  obj = {
+    nombre: 'Luis Burgos'
+  };
+
+  mostrarNombre(): void{
+
+  }
 }

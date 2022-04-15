@@ -5,7 +5,8 @@ import { NoComunesComponent } from './pages/no-comunes/no-comunes.component';
 import { BasicosComponent } from './pages/basicos/basicos.component';
 import { OrdenarComponent } from './pages/ordenar/ordenar.component';
 import { PrimeNgModule } from '../prime-ng/prime-ng.module';
-import { MyFilterPipe } from '../shared/pipes/filter';
+import { MyFilterPipe } from './pipes/filter.pipe';
+import { MayusculaPipe } from './pipes/mayusculas.pipe';
 
 
 
@@ -15,7 +16,8 @@ import { MyFilterPipe } from '../shared/pipes/filter';
     NoComunesComponent,
     BasicosComponent,
     OrdenarComponent,
-    MyFilterPipe
+    MyFilterPipe,
+    MayusculaPipe
   ],
   imports: [
     CommonModule,

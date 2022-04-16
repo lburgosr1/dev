@@ -1,0 +1,1 @@
+{"ast":null,"code":"export var Color = /*#__PURE__*/(() => {\n  (function (Color) {\n    Color[Color[\"rojo\"] = 0] = \"rojo\";\n    Color[Color[\"negro\"] = 1] = \"negro\";\n    Color[Color[\"azul\"] = 2] = \"azul\";\n    Color[Color[\"verde\"] = 3] = \"verde\";\n  })(Color || (Color = {}));\n\n  return Color;\n})();","map":null,"metadata":{},"sourceType":"module"}

@@ -7,6 +7,9 @@ import { OrdenarComponent } from './pages/ordenar/ordenar.component';
 import { PrimeNgModule } from '../prime-ng/prime-ng.module';
 import { MyFilterPipe } from './pipes/filter.pipe';
 import { MayusculaPipe } from './pipes/mayusculas.pipe';
+import { FliyingPipe } from './pipes/fliying.pipe';
+import { ColorPipe } from './pipes/color.pipe';
+import { SortPipe } from './pipes/sort.pipe';
 
 
 
@@ -17,7 +20,10 @@ import { MayusculaPipe } from './pipes/mayusculas.pipe';
     BasicosComponent,
     OrdenarComponent,
     MyFilterPipe,
-    MayusculaPipe
+    MayusculaPipe,
+    FliyingPipe,
+    ColorPipe,
+    SortPipe
   ],
   imports: [
     CommonModule,

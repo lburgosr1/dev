@@ -4,11 +4,11 @@
         <h1>Buscador de Heroe</h1>
         <mat-divider></mat-divider>
     </div>
-    <div>
+    <div fxLayout="column">
         <h3>Buscador</h3>
 
         <mat-form-field>
-            <mat-label>Number</mat-label>
+            <mat-label>Search</mat-label>
             <input type="text"
                    placeholder="Pick one"
                    aria-label="Heroe Name"
@@ -16,10 +16,19 @@
                    [(ngModel)]="term"
                    [matAutocomplete]="auto"
                    (input)="searching()">
-            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-              <mat-option *ngFor="let heroe of heroes" [value]="heroe">
-                {{heroe.superhero}}
-              </mat-option>
+            <mat-autocomplete autoActiveFirstOption 
+                              #auto="matAutocomplete"
+                              (optionSelected)="optionSelected($event)">
+                  <div *ngIf="heroes?.length && term.length > 0">
+                    <mat-option *ngFor="let heroe of heroes" [value]="heroe">
+                      {{heroe.superhero}}
+                    </mat-option>
+                  </div>
+                  <div *ngIf="!heroes?.length && term.trim().length > 2">
+                    <mat-option [value]="''">
+                      No se encontro nada con el termino {{term}}
+                    </mat-option>
+                  </div>
             </mat-autocomplete>
         </mat-form-field>
     </div>

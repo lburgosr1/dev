@@ -42,9 +42,16 @@
         </button>
         
         <div class="spacer"></div>
+        
+        <div>
+            <span class="material-icons">person</span>
+            {{ user.usuario }}
+        </div>
+        
         <button mat-stroked-button 
                 color="warn"
-                (click)="logout()">
+                (click)="logout()"
+                class="ml-10">
             Logout
         </button>
      </mat-toolbar>

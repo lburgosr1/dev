@@ -6,3 +6,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .spacer {
     flex: 1 1 auto;
 }
+
+::ng-deep  .snackBar-fail {
+    color: #ffffff !important;
+    background-color: #cc3333 !important;
+}
+
+::ng-deep .snackBar-success {
+    color: #ffffff !important;
+    background-color: #2ad138 !important;
+}

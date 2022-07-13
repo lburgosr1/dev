@@ -1,1 +1,92 @@
-<p>switches works!</p>
+<h2>Reactivos: Switches</h2>
+<hr>
+
+<form autocomplete="off" [formGroup]="myForm" (ngSubmit)="save()">
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Genero</label>
+        <div class="col-sm-9">
+
+            <div class="form-check">
+                <input class="form-check-input" 
+                        type="radio" 
+                        id="radioMasculino"
+                        formControlName="genender"
+                        value="M">
+                <label class="form-check-label" for="radioMasculino">
+                  Masculino
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" 
+                        type="radio" 
+                        id="radioFemenino"
+                        formControlName="genender"
+                        value="F">
+                <label class="form-check-label" for="radioFemenino">
+                  Femenino
+                </label>
+              </div>
+        
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Notificaciones</label>
+        <div class="col-sm-9">
+            <div class="form-check form-switch mt-2">
+                <input class="form-check-input" 
+                        type="checkbox"
+                        formControlName="notifications" 
+                        role="switch" 
+                        id="flexSwitchCheckChecked">
+                    <label class="form-check-label" 
+                            for="flexSwitchCheckChecked">
+                        Quiero recibir notificaiones
+                    </label>
+              </div>
+        </div> 
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label"></label>
+        <div class="col-sm-9">
+            <div class="form-check">
+                <input class="form-check-input" 
+                        type="checkbox"
+                        formControlName="conditions"
+                        id="flexCheckDefault">
+                <label class="form-check-label" 
+                        for="flexCheckDefault">
+                  Terminos y codiciones de uso
+                </label>
+              </div>
+        </div> 
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <button type="submit" class="btn btn-primary float-end">
+                Guardar
+            </button>
+        </div>
+    </div>
+
+</form>
+<h5>Valor del formulario</h5>
+<pre>{{myForm.value | json}}</pre>
+<br>
+
+<h5>Persona</h5>
+<pre>{{person | json}}</pre>
+<br>
+
+<h5>Valid</h5>
+<pre>{{myForm.valid}}</pre>
+<br>
+
+<!-- <h5>Terminos</h5>
+<pre>{{myForm.controls?.terminos?.errors | json}}</pre>
+<br>
+
+<pre>Condiciones: </pre> -->

@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const APIURL = {\n  version: 'v3.1',\n  getCountries: 'region'\n};","map":null,"metadata":{},"sourceType":"module"}

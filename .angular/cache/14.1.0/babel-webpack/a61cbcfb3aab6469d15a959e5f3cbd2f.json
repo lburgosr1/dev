@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const environment = {\n  production: true,\n  mapboxToken: 'pk.eyJ1IjoibGJ1cmdvc3IxIiwiYSI6ImNsNXk4ZGphMDExMjIzY2wzaWpwbnpvbGwifQ.cI3lwGMP_d3DmSfentbE5A'\n};","map":null,"metadata":{},"sourceType":"module"}

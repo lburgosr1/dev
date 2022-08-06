@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  url: 'https://restcountries.com'
+  url: 'https://restcountries.com',
+  mapboxToken: 'pk.eyJ1IjoibGJ1cmdvc3IxIiwiYSI6ImNsNXk4ZGphMDExMjIzY2wzaWpwbnpvbGwifQ.cI3lwGMP_d3DmSfentbE5A'
 };
 
 /*

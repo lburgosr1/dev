@@ -1,11 +1,23 @@
-export interface CountrieSmall {
-    name: Name;
+export interface ICountrieSmall {
+    name: IName;
     cca3: string;
     latlng: number[];
 }
 
-export interface Countrie {
-    name:         Name;
+export class CountrieSmall implements ICountrieSmall {
+    name: IName;
+    cca3: string;
+    latlng: number[];
+
+    constructor() {
+        this.cca3 = '';
+        this.name = null;
+        this.latlng = [18.489202466590267,-69.94680196984339];
+    }
+}
+
+export interface ICountrie {
+    name:         IName;
     tld:          string[];
     cca2:         string;
     ccn3:         string;
@@ -14,68 +26,68 @@ export interface Countrie {
     independent:  boolean;
     status:       string;
     unMember:     boolean;
-    currencies:   Currencies;
+    currencies:   ICurrencies;
     idd:          Idd;
     capital:      string[];
     altSpellings: string[];
     region:       string;
     subregion:    string;
-    languages:    Languages;
-    translations: { [key: string]: Translation };
+    languages:    ILanguages;
+    translations: { [key: string]: ITranslation };
     latlng:       number[];
     landlocked:   boolean;
     borders:      string[];
     area:         number;
-    demonyms:     Demonyms;
+    demonyms:     IDemonyms;
     flag:         string;
-    maps:         Maps;
+    maps:         IMaps;
     population:   number;
-    gini:         Gini;
+    gini:         IGini;
     fifa:         string;
-    car:          Car;
+    car:          ICar;
     timezones:    string[];
     continents:   string[];
-    flags:        CoatOfArms;
-    coatOfArms:   CoatOfArms;
+    flags:        ICoatOfArms;
+    coatOfArms:   ICoatOfArms;
     startOfWeek:  string;
-    capitalInfo:  CapitalInfo;
-    postalCode:   PostalCode;
+    capitalInfo:  ICapitalInfo;
+    postalCode:   IPostalCode;
 }
 
-export interface CapitalInfo {
+export interface ICapitalInfo {
     latlng: number[];
 }
 
-export interface Car {
+export interface ICar {
     signs: string[];
     side:  string;
 }
 
-export interface CoatOfArms {
+export interface ICoatOfArms {
     png: string;
     svg: string;
 }
 
-export interface Currencies {
-    PEN: Pen;
+export interface ICurrencies {
+    PEN: IPen;
 }
 
-export interface Pen {
+export interface IPen {
     name:   string;
     symbol: string;
 }
 
-export interface Demonyms {
-    eng: Eng;
-    fra: Eng;
+export interface IDemonyms {
+    eng: IEng;
+    fra: IEng;
 }
 
-export interface Eng {
+export interface IEng {
     f: string;
     m: string;
 }
 
-export interface Gini {
+export interface IGini {
     "2019": number;
 }
 
@@ -84,35 +96,35 @@ export interface Idd {
     suffixes: string[];
 }
 
-export interface Languages {
+export interface ILanguages {
     aym: string;
     que: string;
     spa: string;
 }
 
-export interface Maps {
+export interface IMaps {
     googleMaps:     string;
     openStreetMaps: string;
 }
 
-export interface Name {
+export interface IName {
     common:     string;
     official:   string;
-    nativeName: NativeName;
+    nativeName: INativeName;
 }
 
-export interface NativeName {
-    aym: Translation;
-    que: Translation;
-    spa: Translation;
+export interface INativeName {
+    aym: ITranslation;
+    que: ITranslation;
+    spa: ITranslation;
 }
 
-export interface Translation {
+export interface ITranslation {
     official: string;
     common:   string;
 }
 
-export interface PostalCode {
+export interface IPostalCode {
     format: string;
     regex:  string;
 }

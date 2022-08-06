@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class CountrieSmall {\n  constructor() {\n    this.cca3 = '';\n    this.name = null;\n    this.latlng = [18.489202466590267, -69.94680196984339];\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}

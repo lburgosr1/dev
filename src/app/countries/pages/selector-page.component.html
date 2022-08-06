@@ -1,60 +1,67 @@
 <h5>Paises</h5>
 <hr>
-<form [formGroup]="myForm" (ngSubmit)="save()">
+<div class="row">
+    <form [formGroup]="myForm" class="col-md-6" (ngSubmit)="selectBorder()">
 
-    <div class="row mb-3">
-        <div class="col">
-            <label class="form-label">Region:</label>
-            <select class="form-select" formControlName="region">
-                <option value="" selected disabled>Seleccione una region</option>
-                <option *ngFor="let region of regions" [value]="region | lowercase">
-                    {{region}}
-                </option>
-            </select>
+        <div class="row mb-3">
+            <div class="col">
+                <label class="form-label">Region:</label>
+                <select class="form-select" formControlName="region">
+                    <option value="" selected disabled>Seleccione una region</option>
+                    <option *ngFor="let region of regions" [value]="region | lowercase">
+                        {{region}}
+                    </option>
+                </select>
+            </div>
         </div>
-    </div>
-    
-    <div class="row mb-3" *ngIf="countries && countries.length !== 0">
-        <div class="col">
-            <label class="form-label">Paises:</label>
-            <select class="form-select" formControlName="countrie">
-                <option value="" selected disabled>Selecione un pais</option>
-                <option *ngFor="let countrie of countries" [value]="countrie.cca3">
-                    {{countrie.name.common}}
-                </option>
-            </select>
-        </div>
-    </div>
 
-    <div class="row mb-3" *ngIf="borders && borders.length > 0">
-        <div class="col">
-            <label class="form-label">Fronteras:</label>
-            <select class="form-select" formControlName="borders">
-                <option value="" selected disabled>Selecione el pais fronterizo</option>
-                <option *ngFor="let border of borders" [value]="border.name.common">
-                    {{border.name.common}}
-                </option>
-            </select>
+        <div class="row mb-3" *ngIf="countries && countries.length !== 0">
+            <div class="col">
+                <label class="form-label">Paises:</label>
+                <select class="form-select" formControlName="countrie">
+                    <option value="" selected disabled>Selecione un pais</option>
+                    <option *ngFor="let countrie of countries | sort" [value]="countrie.cca3">
+                        {{countrie.name.common}}
+                    </option>
+                </select>
+            </div>
         </div>
-    </div>
 
-    <div class="row" *ngIf="loading">
-        <div class="col">
-            <div class="alert alert-primary">
-                Cargando...
+        <div class="row mb-3" *ngIf="borders && borders.length > 0">
+            <div class="col">
+                <label class="form-label">Fronteras:</label>
+                <select class="form-select" formControlName="borders" (change)="selectBorder()">
+                    <option value="" selected disabled>Selecione el pais fronterizo</option>
+                    <option *ngFor="let border of borders; let i = index" [value]="border.name.common">
+                        {{border.name.common}}
+                    </option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row" *ngIf="loading">
+            <div class="col">
+                <div class="alert alert-primary">
+                    Cargando...
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-primary float-end" type="submit">
+                    Seleccionar
+                </button>
+            </div>
+        </div>
+    </form>
+    <div class="col-md-6 container">
+        <div class="row">
+            <div class="col-12 mt-2">
+                <div class="card">
+                    <div #map class="map"></div>
+                </div>
             </div>
         </div>
     </div>
-
-    <div class="row">
-        <div class="col">
-            <button class="btn btn-primary float-end" type="submit">
-                Seleccionar
-            </button>
-        </div>
-    </div>
-</form>
-
-<h3>Formulario</h3>
-<pre>Valid: {{myForm.valid}}</pre>
-<pre>{{myForm.value | json}}</pre>
+</div>

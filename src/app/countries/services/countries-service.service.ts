@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { combineLatest, Observable, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { APIURL } from '../common/api-url';
-import { Countrie, CountrieSmall } from '../interfaces/countrie.interface';
+import { ICountrie, ICountrieSmall } from '../interfaces/countrie.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -15,33 +15,33 @@ export class CountriesService {
 
   constructor(private http: HttpClient) { }
 
-  getCountriesForRegion(region: string): Observable<Array<CountrieSmall>> {
-   return this.http.get<Array<CountrieSmall>>(`${this.baseUrl}/${APIURL.version}/${APIURL.getCountrieSmall}/${region}?fields=name,cca3,latlng`);
+  getCountriesForRegion(region: string): Observable<Array<ICountrieSmall>> {
+   return this.http.get<Array<ICountrieSmall>>(`${this.baseUrl}/${APIURL.version}/${APIURL.getCountrieSmall}/${region}?fields=name,cca3,latlng`);
   }
 
-  getCountriesForCode(code: string): Observable<Countrie> {
+  getCountriesForCode(code: string): Observable<ICountrie> {
     if(!code) {
-      return of({} as Countrie);
+      return of({} as ICountrie);
     }
-    return this.http.get<Countrie>(`${this.baseUrl}/${APIURL.version}/${APIURL.getCountries}/${code}`);
+    return this.http.get<ICountrie>(`${this.baseUrl}/${APIURL.version}/${APIURL.getCountries}/${code}`);
   }
 
-  getCountriesForCodeSmall(code: string): Observable<CountrieSmall> {
+  getCountriesForCodeSmall(code: string): Observable<ICountrieSmall> {
 
     if(!code) {
-      return of({} as CountrieSmall);
+      return of({} as ICountrieSmall);
     }
-    return this.http.get<Countrie>(`${this.baseUrl}/${APIURL.version}/${APIURL.getCountries}/${code}?fields=name,cca3,latlng`);
+    return this.http.get<ICountrie>(`${this.baseUrl}/${APIURL.version}/${APIURL.getCountries}/${code}?fields=name,cca3,latlng`);
 
   }
 
-  getCountriesBorders(borders: Array<string>): Observable<Array<CountrieSmall>> {
+  getCountriesBorders(borders: Array<string>): Observable<Array<ICountrieSmall>> {
 
     if(!borders) {
-      return of({} as Array<CountrieSmall>);
+      return of({} as Array<ICountrieSmall>);
     }
 
-    const requests: Observable<CountrieSmall>[] = [];
+    const requests: Observable<ICountrieSmall>[] = [];
 
     borders.forEach(codigo => {
       const request = this.getCountriesForCodeSmall(codigo);

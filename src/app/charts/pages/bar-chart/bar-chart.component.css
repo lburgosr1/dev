@@ -3,6 +3,7 @@
     background-color: tomato;
     border-radius: 5px;
     font-weight: 600;
+    margin: 5px;
 }
 
 .btn:hover {
